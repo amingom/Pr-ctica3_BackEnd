@@ -2,11 +2,10 @@ import { MongoClient, ObjectId } from 'mongodb';
 import { NinoModel, UbicacionModel } from "./types.ts";
 import { fromModelToNino, fromModelToUbicacion, haversine } from "./resolvers.ts";
 
-const MONGO_URL = Deno.env.get("MONGO_URL");
+const MONGO_URL = "mongodb+srv://db_username:db_password@backend.pgd3j.mongodb.net/?retryWrites=true&w=majority&appName=BackEnd";
 
 if (!MONGO_URL) {
   console.error("MONGO_URL is not set");
-  Deno.exit(1);
 }
 
 const client = new MongoClient(MONGO_URL);
